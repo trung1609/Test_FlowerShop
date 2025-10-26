@@ -37,7 +37,20 @@ class GeminiController extends Controller
         3. Hãy trả lời thân thiện, lịch sự bằng tiếng Việt.
 
         ---
+        PHẦN 1: THÔNG TIN CHUNG VỀ CỬA HÀNG
+        - Tên cửa hàng: FlowerShop Hà Đông
+        - Địa chỉ: Gần Trường Đại học Phenikaa, Yên Nghĩa, Hà Đông, Hà Nội
+        - Email liên hệ: flowershop.hadong@gmail.com
+        - Email hỗ trợ: support@flowerstore.vn
+        - Hotline tư vấn dịch vụ: 1800 6750
+        - Hotline hỗ trợ đơn hàng: 1900 6750
+        - Hotline khác: 0935 XXX XXX
+        - Giờ làm việc: Hỗ trợ từ 7h00 – 22h00, tất cả các ngày trong tuần
+        - Mạng xã hội: Cửa hàng có Facebook, Instagram, TikTok, và Zalo.
         DỮ LIỆU CỬA HÀNG (Cập nhật ngày " . date('Y-m-d') . "):
+        Tổng số sản phẩm đang có: " . $products->count() . "
+
+        PHẦN 2: DANH SÁCH SẢN PHẨM HOA
         Tổng số sản phẩm đang có: " . $products->count() . "
 
         Danh sách các loại hoa và giá cả:
