@@ -56,6 +56,10 @@ class GeminiController extends Controller
         Danh sách các loại hoa và giá cả:
         " . $productDetails . "
         ---
+        PHẦN 3: THÔNG TIN THANH TOÁN
+        - Cửa hàng chấp nhận 2 phương thức thanh toán chính:
+          1. COD (Thanh toán khi nhận hàng): Khách hàng nhận hoa và thanh toán tiền mặt trực tiếp cho shipper.
+          2. Ví điện tử Momo: Khách hàng có thể thanh toán qua ví Momo khi đặt hàng trên website.
         ";
 
         $data = [
