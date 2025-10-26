@@ -98,7 +98,7 @@ class CheckoutController extends Controller
         }
 
         // Tìm hoặc tạo khách hàng tương ứng với user hiện tại
-        $user = \Auth::user();
+        $user = Auth::user();
         $customer = \App\Models\Customer::firstOrCreate(
             ['email' => $user->email],
             ['name' => $user->name, 'phone' => $request->phone]
