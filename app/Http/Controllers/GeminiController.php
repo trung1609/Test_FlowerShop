@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\Models\Product; // <-- THÊM DÒNG NÀY (Rất quan trọng)
+use App\Models\Product;
 
 class GeminiController extends Controller
 {
@@ -23,7 +23,7 @@ class GeminiController extends Controller
         $products = Product::orderBy('created_at', 'desc')->get(['name', 'price']);
 
         // Chuyển dữ liệu thành một chuỗi (string) để Gemini "đọc"
-        $productDetails = $products->map(function($product) {
+        $productDetails = $products->map(function ($product) {
             return " - " . $product->name . ": " . number_format($product->price, 0, ',', '.') . " VND";
         })->join("\n");
 
@@ -83,9 +83,8 @@ class GeminiController extends Controller
 
             $responseText = $response->json('candidates.0.content.parts.0.text', 'Xin lỗi, tôi không thể xử lý yêu cầu này.');
 
-            
-            return response()->json(['reply' => $responseText]);
 
+            return response()->json(['reply' => $responseText]);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }

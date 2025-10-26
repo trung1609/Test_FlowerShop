@@ -9,138 +9,149 @@
 Dự án "FlowerShop" là một ứng dụng web thương mại điện tử chuyên về kinh doanh hoa, cho phép khách hàng mua sắm hoa trực tuyến và quản trị viên quản lý sản phẩm, đơn hàng. Ứng dụng này cung cấp các tính năng như đăng ký, đăng nhập, quản lý sản phẩm, giỏ hàng, đặt hàng, thanh toán và xem lịch sử mua hàng.
 
 **Công nghệ sử dụng:**
-- Use Laravel Framework
-- Use Breeze for authentication
-- Use Eloquent ORM for database operations
-- Use MySQL for database
+
+-   Use Laravel Framework
+-   Use Breeze for authentication
+-   Use Eloquent ORM for database operations
+-   Use MySQL for database
 
 ## 📋 Mục lục
 
-- [Mô tả dự án](#-mô-tả-dự-án)
-- [Tính năng chính](#-tính-năng-chính)
-  - [Dành cho Khách hàng](#-dành-cho-khách-hàng)
-  - [Dành cho Quản trị viên](#-dành-cho-quản-trị-viên)
-- [Công nghệ sử dụng](#-công-nghệ-sử-dụng)
-  - [Backend](#backend)
-  - [Frontend](#frontend)
-  - [Database](#database)
-  - [Development Tools](#development-tools)
-- [Yêu cầu hệ thống](#-yêu-cầu-hệ-thống)
-- [Hướng dẫn cài đặt](#-hướng-dẫn-cài-đặt)
-  - [Clone dự án](#1-clone-dự-án)
-  - [Cài đặt dependencies PHP](#2-cài-đặt-dependencies-php)
-  - [Cài đặt dependencies JavaScript](#3-cài-đặt-dependencies-javascript)
-  - [Cấu hình môi trường](#4-cấu-hình-môi-trường)
-  - [Cấu hình database trong file .env](#5-cấu-hình-database-trong-file-env)
-  - [Chạy migration và seeder](#6-chạy-migration-và-seeder)
-  - [Khởi chạy ứng dụng](#7-khởi-chạy-ứng-dụng)
-    - [Phương pháp 1: Chạy riêng lẻ](#phương-pháp-1-chạy-riêng-lẻ)
-    - [Phương pháp 2: Chạy đồng thời (Khuyến nghị)](#phương-pháp-2-chạy-đồng-thời-khuyến-nghị)
-- [Cấu trúc dự án](#-cấu-trúc-dự-án)
-- [Sử dụng](#-sử-dụng)
-  - [Đăng nhập Admin](#đăng-nhập-admin)
-  - [Quản lý sản phẩm](#quản-lý-sản-phẩm)
-  - [Mua sắm](#mua-sắm)
-- [API Endpoints chính](#-api-endpoints-chính)
-  - [Authentication](#authentication)
-  - [Products](#products)
-  - [Cart & Checkout](#cart--checkout)
-  - [Orders](#orders)
-  - [Reviews](#reviews)
-  - [Profile](#profile)
-- [Testing](#-testing)
-- [Tính năng nâng cao](#-tính-năng-nâng-cao)
-- [Đóng góp](#-đóng-góp)
-- [Yêu cầu đã hoàn thành](#-yêu-cầu-đã-hoàn-thành)
-- [Ghi chú phát triển](#-ghi-chú-phát-triển)
+-   [Mô tả dự án](#-mô-tả-dự-án)
+-   [Tính năng chính](#-tính-năng-chính)
+    -   [Dành cho Khách hàng](#-dành-cho-khách-hàng)
+    -   [Dành cho Quản trị viên](#-dành-cho-quản-trị-viên)
+-   [Công nghệ sử dụng](#-công-nghệ-sử-dụng)
+    -   [Backend](#backend)
+    -   [Frontend](#frontend)
+    -   [Database](#database)
+    -   [Development Tools](#development-tools)
+-   [Yêu cầu hệ thống](#-yêu-cầu-hệ-thống)
+-   [Hướng dẫn cài đặt](#-hướng-dẫn-cài-đặt)
+    -   [Clone dự án](#1-clone-dự-án)
+    -   [Cài đặt dependencies PHP](#2-cài-đặt-dependencies-php)
+    -   [Cài đặt dependencies JavaScript](#3-cài-đặt-dependencies-javascript)
+    -   [Cấu hình môi trường](#4-cấu-hình-môi-trường)
+    -   [Cấu hình database trong file .env](#5-cấu-hình-database-trong-file-env)
+    -   [Chạy migration và seeder](#6-chạy-migration-và-seeder)
+    -   [Khởi chạy ứng dụng](#7-khởi-chạy-ứng-dụng)
+        -   [Phương pháp 1: Chạy riêng lẻ](#phương-pháp-1-chạy-riêng-lẻ)
+        -   [Phương pháp 2: Chạy đồng thời (Khuyến nghị)](#phương-pháp-2-chạy-đồng-thời-khuyến-nghị)
+-   [Cấu trúc dự án](#-cấu-trúc-dự-án)
+-   [Sử dụng](#-sử-dụng)
+    -   [Đăng nhập Admin](#đăng-nhập-admin)
+    -   [Quản lý sản phẩm](#quản-lý-sản-phẩm)
+    -   [Mua sắm](#mua-sắm)
+-   [API Endpoints chính](#-api-endpoints-chính)
+    -   [Authentication](#authentication)
+    -   [Products](#products)
+    -   [Cart & Checkout](#cart--checkout)
+    -   [Orders](#orders)
+    -   [Reviews](#reviews)
+    -   [Profile](#profile)
+-   [Testing](#-testing)
+-   [Tính năng nâng cao](#-tính-năng-nâng-cao)
+-   [Đóng góp](#-đóng-góp)
+-   [Yêu cầu đã hoàn thành](#-yêu-cầu-đã-hoàn-thành)
+-   [Ghi chú phát triển](#-ghi-chú-phát-triển)
 
 ### 👥 Dành cho Khách hàng:
-- **Xác thực người dùng**: Đăng ký, đăng nhập, đăng xuất
-- **Duyệt sản phẩm**: Xem danh sách hoa với hình ảnh và thông tin chi tiết
-- **Chi tiết sản phẩm**: Xem thông tin đầy đủ về từng loại hoa
-- **Hệ thống đánh giá**:
-  - Đánh giá và nhận xét sản phẩm
-  - Xem đánh giá từ khách hàng khác
-  - Hệ thống rating sao
-- **Giỏ hàng thông minh**:
-  - Thêm/xóa/cập nhật số lượng sản phẩm
-  - Mua ngay sản phẩm
-  - Thanh toán các sản phẩm đã chọn
-- **Quản lý đơn hàng**:
-  - Đặt hàng và thanh toán
-  - Xem lịch sử mua hàng
-  - Hủy đơn hàng
-  - Nhiều phương thức thanh toán (COD, Chuyển khoản)
-- **Quản lý hồ sơ**:
-  - Cập nhật thông tin cá nhân và mật khẩu
-  - Upload avatar cá nhân
-  - Quản lý thông tin ngân hàng
+
+-   **Xác thực người dùng**: Đăng ký, đăng nhập, đăng xuất
+-   **Duyệt sản phẩm**: Xem danh sách hoa với hình ảnh và thông tin chi tiết
+-   **Chi tiết sản phẩm**: Xem thông tin đầy đủ về từng loại hoa
+-   **Hệ thống đánh giá**:
+    -   Đánh giá và nhận xét sản phẩm
+    -   Xem đánh giá từ khách hàng khác
+    -   Hệ thống rating sao
+-   **Giỏ hàng thông minh**:
+    -   Thêm/xóa/cập nhật số lượng sản phẩm
+    -   Mua ngay sản phẩm
+    -   Thanh toán các sản phẩm đã chọn
+-   **Quản lý đơn hàng**:
+    -   Đặt hàng và thanh toán
+    -   Xem lịch sử mua hàng
+    -   Hủy đơn hàng
+    -   Nhiều phương thức thanh toán (COD, Chuyển khoản)
+-   **Quản lý hồ sơ**:
+    -   Cập nhật thông tin cá nhân và mật khẩu
+    -   Upload avatar cá nhân
+    -   Quản lý thông tin ngân hàng
 
 ### 🔧 Dành cho Quản trị viên:
-- **Quản lý sản phẩm**: Thêm, sửa, xóa, xem danh sách sản phẩm
-- **Quản lý đơn hàng**:
-  - Xem và cập nhật trạng thái đơn hàng
-  - Quản lý phương thức thanh toán
-  - Xem thông tin ngân hàng khách hàng
-- **Quản lý khách hàng**: Xem thông tin và lịch sử mua hàng của khách hàng
-- **Quản lý đánh giá**: Kiểm duyệt và quản lý đánh giá sản phẩm
-- **Dashboard**: Theo dõi hoạt động kinh doanh và thống kê
+
+-   **Quản lý sản phẩm**: Thêm, sửa, xóa, xem danh sách sản phẩm
+-   **Quản lý đơn hàng**:
+    -   Xem và cập nhật trạng thái đơn hàng
+    -   Quản lý phương thức thanh toán
+    -   Xem thông tin ngân hàng khách hàng
+-   **Quản lý khách hàng**: Xem thông tin và lịch sử mua hàng của khách hàng
+-   **Quản lý đánh giá**: Kiểm duyệt và quản lý đánh giá sản phẩm
+-   **Dashboard**: Theo dõi hoạt động kinh doanh và thống kê
 
 ## 🛠 Công nghệ sử dụng
 
 ### Backend:
-- **PHP**: ^8.2
-- **Laravel Framework**: ^12.0
-- **Laravel Breeze**: ^2.3 (Authentication)
-- **Laravel Tinker**: ^2.10.1 (Interactive Shell)
+
+-   **PHP**: ^8.2
+-   **Laravel Framework**: ^12.0
+-   **Laravel Breeze**: ^2.3 (Authentication)
+-   **Laravel Tinker**: ^2.10.1 (Interactive Shell)
 
 ### Frontend:
-- **Blade Template Engine** (Laravel)
-- **TailwindCSS**: ^4.0.0 (CSS Framework)
-- **Vite**: ^6.2.4 (Build Tool)
-- **Axios**: ^1.8.2 (HTTP Client)
+
+-   **Blade Template Engine** (Laravel)
+-   **TailwindCSS**: ^4.0.0 (CSS Framework)
+-   **Vite**: ^6.2.4 (Build Tool)
+-   **Axios**: ^1.8.2 (HTTP Client)
 
 ### Database:
-- **MySQL** (hoặc PostgreSQL/SQLite)
-- **Eloquent ORM** (Laravel)
+
+-   **MySQL** (hoặc PostgreSQL/SQLite)
+-   **Eloquent ORM** (Laravel)
 
 ### Development Tools:
-- **Composer** (PHP Dependency Manager)
-- **NPM** (Node Package Manager)
-- **Laravel Pint**: ^1.13 (Code Style)
-- **PHPUnit**: ^11.5.3 (Testing)
-- **Faker**: ^1.23 (Test Data)
+
+-   **Composer** (PHP Dependency Manager)
+-   **NPM** (Node Package Manager)
+-   **Laravel Pint**: ^1.13 (Code Style)
+-   **PHPUnit**: ^11.5.3 (Testing)
+-   **Faker**: ^1.23 (Test Data)
 
 ## 📋 Yêu cầu hệ thống
 
-- **PHP**: >= 8.2
-- **Composer**: >= 2.0
-- **Node.js**: >= 18.0
-- **NPM**: >= 9.0
-- **MySQL**: >= 8.0 (hoặc PostgreSQL >= 13.0)
-- **Web Server**: Apache/Nginx
+-   **PHP**: >= 8.2
+-   **Composer**: >= 2.0
+-   **Node.js**: >= 18.0
+-   **NPM**: >= 9.0
+-   **MySQL**: >= 8.0 (hoặc PostgreSQL >= 13.0)
+-   **Web Server**: Apache/Nginx
 
 ## 📝 Sơ đồ Use Case
 
 ## � Hướng dẫn cài đặt
 
 ### 1. Clone dự án
+
 ```bash
 git clone https://github.com/your-username/flowershop.git
 cd flowershop
 ```
 
 ### 2. Cài đặt dependencies PHP
+
 ```bash
 composer install
 ```
 
 ### 3. Cài đặt dependencies JavaScript
+
 ```bash
 npm install
 ```
 
 ### 4. Cấu hình môi trường
+
 ```bash
 # Sao chép file cấu hình
 cp .env.example .env
@@ -150,6 +161,7 @@ php artisan key:generate
 ```
 
 ### 5. Cấu hình database trong file `.env`
+
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -160,6 +172,7 @@ DB_PASSWORD=your_password
 ```
 
 ### 6. Chạy migration và seeder
+
 ```bash
 # Tạo bảng database
 php artisan migrate
@@ -171,9 +184,17 @@ php artisan db:seed
 php artisan storage:link
 ```
 
-### 7. Khởi chạy ứng dụng
+### 7. Cài đặt chatbot
+
+```bash
+composer require google-gemini-php/laravel
+php artisan gemini:install
+```
+
+### 8. Khởi chạy ứng dụng
 
 #### Phương pháp 1: Chạy riêng lẻ
+
 ```bash
 # Terminal 1: Laravel server
 php artisan serve
@@ -183,6 +204,7 @@ npm run dev
 ```
 
 #### Phương pháp 2: Chạy đồng thời (Khuyến nghị)
+
 ```bash
 composer dev
 ```
@@ -192,63 +214,74 @@ composer dev
 ## 🗂️ Cấu trúc dự án
 
 ```
+
 ```
+
 ### Quản lý sản phẩm
-- Truy cập `/products` để xem danh sách sản phẩm
-- Thêm sản phẩm mới với hình ảnh tại `/products/create`
-- Chỉnh sửa sản phẩm tại `/products/{id}/edit`
+
+-   Truy cập `/products` để xem danh sách sản phẩm
+-   Thêm sản phẩm mới với hình ảnh tại `/products/create`
+-   Chỉnh sửa sản phẩm tại `/products/{id}/edit`
 
 ### Mua sắm
-- Khách hàng có thể duyệt sản phẩm tại `/shop`
-- Thêm sản phẩm vào giỏ hàng từ trang chi tiết sản phẩm
-- Thanh toán tại `/checkout`
+
+-   Khách hàng có thể duyệt sản phẩm tại `/shop`
+-   Thêm sản phẩm vào giỏ hàng từ trang chi tiết sản phẩm
+-   Thanh toán tại `/checkout`
 
 ## 🔗 API Endpoints chính
 
 ### Authentication
-- `GET /login` - Trang đăng nhập
-- `POST /login` - Xử lý đăng nhập
-- `GET /register` - Trang đăng ký
-- `POST /register` - Xử lý đăng ký
-- `POST /logout` - Đăng xuất
+
+-   `GET /login` - Trang đăng nhập
+-   `POST /login` - Xử lý đăng nhập
+-   `GET /register` - Trang đăng ký
+-   `POST /register` - Xử lý đăng ký
+-   `POST /logout` - Đăng xuất
 
 ### Products
-- `GET /shop` - Danh sách sản phẩm (shop)
-- `GET /products` - Quản lý sản phẩm (admin)
-- `GET /products/create` - Tạo sản phẩm mới
-- `GET /products/{id}` - Chi tiết sản phẩm
-- `POST /products` - Lưu sản phẩm mới
-- `PUT /products/{id}` - Cập nhật sản phẩm
-- `DELETE /products/{id}` - Xóa sản phẩm
+
+-   `GET /shop` - Danh sách sản phẩm (shop)
+-   `GET /products` - Quản lý sản phẩm (admin)
+-   `GET /products/create` - Tạo sản phẩm mới
+-   `GET /products/{id}` - Chi tiết sản phẩm
+-   `POST /products` - Lưu sản phẩm mới
+-   `PUT /products/{id}` - Cập nhật sản phẩm
+-   `DELETE /products/{id}` - Xóa sản phẩm
 
 ### Cart & Checkout
-- `GET /cart` - Xem giỏ hàng
-- `POST /cart/add/{id}` - Thêm vào giỏ hàng
-- `POST /cart/update/{id}` - Cập nhật giỏ hàng
-- `POST /cart/remove/{id}` - Xóa khỏi giỏ hàng
-- `POST /cart/buy-now/{id}` - Mua ngay
-- `GET /checkout` - Trang thanh toán
-- `POST /checkout` - Xử lý thanh toán
+
+-   `GET /cart` - Xem giỏ hàng
+-   `POST /cart/add/{id}` - Thêm vào giỏ hàng
+-   `POST /cart/update/{id}` - Cập nhật giỏ hàng
+-   `POST /cart/remove/{id}` - Xóa khỏi giỏ hàng
+-   `POST /cart/buy-now/{id}` - Mua ngay
+-   `GET /checkout` - Trang thanh toán
+-   `POST /checkout` - Xử lý thanh toán
 
 ### Orders
-- `GET /orders` - Danh sách đơn hàng (admin)
-- `GET /orders/history` - Lịch sử mua hàng (customer)
-- `POST /orders/{id}/cancel` - Hủy đơn hàng
-- `POST /orders/{id}/update-status` - Cập nhật trạng thái (admin)
+
+-   `GET /orders` - Danh sách đơn hàng (admin)
+-   `GET /orders/history` - Lịch sử mua hàng (customer)
+-   `POST /orders/{id}/cancel` - Hủy đơn hàng
+-   `POST /orders/{id}/update-status` - Cập nhật trạng thái (admin)
 
 ### Reviews
-- `POST /products/{id}/reviews` - Thêm đánh giá sản phẩm
-- `GET /products/{id}/reviews` - Xem đánh giá sản phẩm
-- `DELETE /reviews/{id}` - Xóa đánh giá (admin/owner)
+
+-   `POST /products/{id}/reviews` - Thêm đánh giá sản phẩm
+-   `GET /products/{id}/reviews` - Xem đánh giá sản phẩm
+-   `DELETE /reviews/{id}` - Xóa đánh giá (admin/owner)
 
 ### Profile
-- `GET /profile` - Trang hồ sơ cá nhân
-- `POST /profile/update` - Cập nhật thông tin cá nhân
-- `POST /profile/avatar` - Cập nhật avatar
+
+-   `GET /profile` - Trang hồ sơ cá nhân
+-   `POST /profile/update` - Cập nhật thông tin cá nhân
+-   `POST /profile/avatar` - Cập nhật avatar
 
 ## 🧪 Testing
 
 Chạy test suite:
+
 ```bash
 # Chạy tất cả tests
 composer test
@@ -259,24 +292,23 @@ php artisan test
 
 ## 📈 Tính năng nâng cao
 
-- **Session-based Cart**: Giỏ hàng lưu trữ trong session
-- **Image Upload**: Upload và quản lý hình ảnh sản phẩm, avatar người dùng
-- **Order Management**: Hệ thống quản lý đơn hàng với các trạng thái
-- **Payment Integration**:
-  - Thanh toán COD (Cash on Delivery)
-  - Chuyển khoản ngân hàng
-  - Lưu thông tin ngân hàng khách hàng
-- **Review System**:
-  - Hệ thống đánh giá sao (1-5 sao)
-  - Bình luận và nhận xét chi tiết
-  - Kiểm duyệt đánh giá
-- **User Profile**:
-  - Quản lý thông tin cá nhân và đổi mật khẩu
-  - Upload và quản lý avatar
-  - Lưu thông tin ngân hàng
-- **Responsive Design**: Giao diện tương thích đa thiết bị
-- **Admin Analytics**: Thống kê sản phẩm, đơn hàng và khách hàng
-
+-   **Session-based Cart**: Giỏ hàng lưu trữ trong session
+-   **Image Upload**: Upload và quản lý hình ảnh sản phẩm, avatar người dùng
+-   **Order Management**: Hệ thống quản lý đơn hàng với các trạng thái
+-   **Payment Integration**:
+    -   Thanh toán COD (Cash on Delivery)
+    -   Chuyển khoản ngân hàng
+    -   Lưu thông tin ngân hàng khách hàng
+-   **Review System**:
+    -   Hệ thống đánh giá sao (1-5 sao)
+    -   Bình luận và nhận xét chi tiết
+    -   Kiểm duyệt đánh giá
+-   **User Profile**:
+    -   Quản lý thông tin cá nhân và đổi mật khẩu
+    -   Upload và quản lý avatar
+    -   Lưu thông tin ngân hàng
+-   **Responsive Design**: Giao diện tương thích đa thiết bị
+-   **Admin Analytics**: Thống kê sản phẩm, đơn hàng và khách hàng
 
 ## 🤝 Đóng góp
 
@@ -285,8 +317,6 @@ php artisan test
 3. Commit thay đổi (`git commit -m 'Add some amazing feature'`)
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Tạo Pull Request
-
-
 
 ### Sơ đồ Database (ERD)
 
@@ -307,7 +337,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     PRODUCTS ||--o{ ORDER_ITEMS : "được đặt mua"
     PRODUCTS ||--o{ REVIEWS : "được đánh giá"
     PRODUCTS ||--o{ PRODUCT_CATEGORIES : "thuộc danh mục"
@@ -323,7 +353,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     CATEGORIES ||--o{ PRODUCT_CATEGORIES : "phân loại"
     CATEGORIES {
         bigint id PK
@@ -333,13 +363,13 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     PRODUCT_CATEGORIES {
         bigint id PK
         bigint product_id FK
         bigint category_id FK
     }
-    
+
     ORDERS ||--|{ ORDER_ITEMS : "chứa"
     ORDERS ||--|| PAYMENTS : "có thanh toán"
     ORDERS ||--|| SHIPPING : "vận chuyển"
@@ -355,7 +385,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     ORDER_ITEMS {
         bigint id PK
         bigint order_id FK
@@ -364,7 +394,7 @@ erDiagram
         decimal price
         decimal discount
     }
-    
+
     PAYMENTS {
         bigint id PK
         bigint order_id FK
@@ -377,7 +407,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     SHIPPING {
         bigint id PK
         bigint order_id FK
@@ -389,7 +419,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     REVIEWS {
         bigint id PK
         bigint user_id FK
@@ -400,7 +430,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     DISCOUNTS ||--o{ PRODUCTS : "áp dụng"
     DISCOUNTS {
         bigint id PK
@@ -413,7 +443,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     CART_ITEMS {
         bigint id PK
         bigint user_id FK
@@ -429,6 +459,7 @@ erDiagram
 ### Sequence Diagram Quản lý Xác thực
 
 ## 1. Đăng ký tài khoản
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -454,6 +485,7 @@ sequenceDiagram
 ```
 
 ## 2. Đăng nhập
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -477,6 +509,7 @@ sequenceDiagram
 ```
 
 ## 3. Đăng xuất
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -496,6 +529,7 @@ sequenceDiagram
 ### Sequence Diagram Quản lý Sản phẩm
 
 ## 1. Thêm sản phẩm mới
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -521,6 +555,7 @@ sequenceDiagram
 ```
 
 ## 2. Cập nhật sản phẩm
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -549,6 +584,7 @@ sequenceDiagram
 ```
 
 ## 3. Xóa sản phẩm
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -566,6 +602,7 @@ sequenceDiagram
 ```
 
 ## 4. Xem chi tiết sản phẩm
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -588,6 +625,7 @@ sequenceDiagram
 # Sequence Diagram Quản lý Khách hàng
 
 ## 1. Tạo mới khách hàng
+
 ```mermaid
 sequenceDiagram
     actor Admin
@@ -606,6 +644,7 @@ sequenceDiagram
 ```
 
 ## 2. Cập nhật thông tin khách hàng
+
 ```mermaid
 sequenceDiagram
     actor Admin
@@ -625,6 +664,7 @@ sequenceDiagram
 ```
 
 ## 3. Xem danh sách khách hàng
+
 ```mermaid
 sequenceDiagram
     actor Admin
@@ -641,6 +681,7 @@ sequenceDiagram
 ```
 
 ## 4. Xem lịch sử đơn hàng của khách hàng
+
 ```mermaid
 sequenceDiagram
     actor Admin
@@ -661,6 +702,7 @@ sequenceDiagram
 ### Sequence Diagram Quy trình Đặt hàng
 
 ## 1. Thêm sản phẩm vào giỏ hàng
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -683,6 +725,7 @@ sequenceDiagram
 ```
 
 ## 2. Thanh toán
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -707,6 +750,7 @@ sequenceDiagram
 ```
 
 ## 3. Xử lý đơn hàng
+
 ```mermaid
 sequenceDiagram
     actor Admin
@@ -763,6 +807,7 @@ sequenceDiagram
 ### Sequence Diagram Quy trình Đánh giá Sản phẩm
 
 ## 1. Thêm đánh giá
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -780,6 +825,7 @@ sequenceDiagram
 ```
 
 ## 2. Cập nhật đánh giá
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -796,6 +842,7 @@ sequenceDiagram
 ```
 
 ## 3. Xóa đánh giá
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -812,6 +859,7 @@ sequenceDiagram
 ```
 
 ## 4. Hiển thị đánh giá
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -831,6 +879,7 @@ sequenceDiagram
 ### Sequence Diagram Quy trình Thống kê Báo cáo
 
 ## 1. Thống kê sản phẩm
+
 ```mermaid
 sequenceDiagram
     actor Admin
@@ -849,6 +898,7 @@ sequenceDiagram
 ```
 
 ## 2. Thống kê đơn hàng
+
 ```mermaid
 sequenceDiagram
     actor Admin
@@ -865,6 +915,7 @@ sequenceDiagram
 ```
 
 ## 3. Thống kê doanh thu
+
 ```mermaid
 sequenceDiagram
     actor Admin
@@ -881,6 +932,7 @@ sequenceDiagram
 ```
 
 ## 4. Thống kê đánh giá
+
 ```mermaid
 sequenceDiagram
     actor Admin
@@ -895,4 +947,3 @@ sequenceDiagram
     ProductController-->>View: Trả về dữ liệu
     View-->>Admin: Hiển thị phân bố đánh giá
 ```
-
